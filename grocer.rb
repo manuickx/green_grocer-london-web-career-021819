@@ -47,6 +47,6 @@ cart = apply_clearance(cart)
   end
   if result > 100 
     result = result * 0.9
-    result
   end
+result
 end
