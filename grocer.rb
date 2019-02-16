@@ -26,6 +26,7 @@ def apply_coupons(cart, coupons)
     end
   end
 cart.delete_if {|name, attrib| attrib[:count] == 0}
+return cart
 end
 
 def apply_clearance(cart)
