@@ -45,5 +45,8 @@ cart = apply_clearance(cart)
   cart.each do |food, info|
     result += (info[:price] * info[:count]).to_f
   end
-  result > 100 ? result * 0.9 : result
+  if result > 100 
+    result = result * 0.9
+    result
+  end
 end
