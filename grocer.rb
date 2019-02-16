@@ -24,7 +24,6 @@ def apply_coupons(cart, coupons)
       cart[item][:count] = cart[item][:count] - hash_wcoupon[:count]*coup[:num]
       cart[item + " W/COUPON"] = hash_wcoupon
     end
-    
   end
 cart.delete_if {|name, attrib| attrib[:count] == 0}
 end
