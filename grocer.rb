@@ -27,7 +27,6 @@ result = {}
     end
   result
   end
-end
 
 def apply_clearance(cart)
   cart.each do |item, value|
