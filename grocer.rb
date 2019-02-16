@@ -46,7 +46,7 @@ cart = apply_clearance(cart)
     total += (data[:price] * data[:count]).to_f
   end
   if total > 100 
-    total = total * 0.9
+    total = total * 9/10
   end
 total
 end
