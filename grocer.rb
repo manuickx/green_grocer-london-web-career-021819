@@ -11,7 +11,22 @@ organized_cart
 end
 
 def apply_coupons(cart, coupons)
-  # code here
+  coupons.each do |coup|
+    item = coup[:item]
+    hash_wcoupon = {
+      :price => coup[:cost],
+      :clearance => "",
+      :count => coup[:num] 
+      }
+    if cart.has_key?(item) && cart[item][:count] >= hash_wcoupon[:count] 
+      hash_wcoupon[:clearance] = cart[item][:clearance]
+      hash_wcoupon[:count] = cart[item][:count]/hash_wcoupon[:count]
+      cart[item][:count] = cart[item][:count] - hash_wcoupon[:count]*coup[:num]
+      cart[item + " W/COUPON"] = hash_wcoupon
+    end
+    
+  end
+cart.delete_if {|name, attrib| attrib[:count] == 0}
 end
 
 def apply_clearance(cart)
